@@ -3,10 +3,10 @@
 /.libs/
 /Makefile
 /autom4te.cache/
-/config.h
+#/config.h
 /config.log
 /config.status
-/dnstap/dnstap_config.h
+#/dnstap/dnstap_config.h
 /dnscrypt/dnscrypt_config.h
 /doc/example.conf
 /doc/libunbound.3
