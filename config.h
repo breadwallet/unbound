@@ -4,6 +4,9 @@
 /* Directory to chroot to */
 /* #undef CHROOT_DIR */
 
+/* Define this to enable client subnet option. */
+/* #undef CLIENT_SUBNET */
+
 /* Do sha512 definitions in config.h */
 /* #undef COMPAT_SHA512 */
 
@@ -52,6 +55,9 @@
 /* Define to 1 if you have the `chroot' function. */
 /* #undef HAVE_CHROOT */
 
+/* Define to 1 if you have the `CRYPTO_cleanup_all_ex_data' function. */
+/* #undef HAVE_CRYPTO_CLEANUP_ALL_EX_DATA */
+
 /* Define to 1 if you have the `ctime_r' function. */
 #define HAVE_CTIME_R 1
 
@@ -65,6 +71,14 @@
 /* Define to 1 if you have the declaration of `arc4random_uniform', and to 0
    if you don't. */
 /* #undef HAVE_DECL_ARC4RANDOM_UNIFORM */
+
+/* Define to 1 if you have the declaration of `inet_ntop', and to 0 if you
+ don't. */
+#define HAVE_DECL_INET_NTOP 1
+
+/* Define to 1 if you have the declaration of `inet_pton', and to 0 if you
+ don't. */
+#define HAVE_DECL_INET_PTON 1
 
 /* Define to 1 if you have the declaration of `NID_secp384r1', and to 0 if you
    don't. */
@@ -105,14 +119,26 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 /* #undef HAVE_DLFCN_H */
 
+/* Define to 1 if you have the `DSA_SIG_set0' function. */
+/* #undef HAVE_DSA_SIG_SET0 */
+
 /* Define to 1 if you have the <endian.h> header file. */
 /* #undef HAVE_ENDIAN_H */
 
 /* Define to 1 if you have the `endprotoent' function. */
 /* #undef HAVE_ENDPROTOENT */
 
+/* Define to 1 if you have the `endpwent' function. */
+/* #undef HAVE_ENDPWENT */
+
 /* Define to 1 if you have the `endservent' function. */
 /* #undef HAVE_ENDSERVENT */
+
+/* Define to 1 if you have the `ERR_free_strings' function. */
+/* #undef HAVE_ERR_FREE_STRINGS */
+
+/* Define to 1 if you have the `ERR_load_crypto_strings' function. */
+/* #undef HAVE_ERR_LOAD_CRYPTO_STRINGS */
 
 /* Define to 1 if you have the `event_base_free' function. */
 /* #undef HAVE_EVENT_BASE_FREE */
@@ -128,6 +154,12 @@
 
 /* Define to 1 if you have the <event.h> header file. */
 /* #undef HAVE_EVENT_H */
+
+/* Define to 1 if you have the `EVP_cleanup' function. */
+/* #undef HAVE_EVP_CLEANUP */
+
+/* Define to 1 if you have the `EVP_dss1' function. */
+/* #undef HAVE_EVP_DSS1 */
 
 /* Define to 1 if you have the `EVP_MD_CTX_new' function. */
 /* #undef HAVE_EVP_MD_CTX_NEW */
@@ -255,8 +287,17 @@
 /* Use libnettle for crypto */
 #define HAVE_NETTLE 1
 
+/* Define to 1 if you have the <nettle/dsa-compat.h> header file. */
+/* #undef HAVE_NETTLE_DSA_COMPAT_H */
+
 /* Use libnss for crypto */
 /* #undef HAVE_NSS */
+
+/* Define to 1 if you have the `OpenSSL_add_all_digests' function. */
+/* #undef HAVE_OPENSSL_ADD_ALL_DIGESTS */
+
+/* Define to 1 if you have the <openssl/bn.h> header file. */
+/* #undef HAVE_OPENSSL_BN_H */
 
 /* Define to 1 if you have the `OPENSSL_config' function. */
 /* #undef HAVE_OPENSSL_CONFIG */
@@ -264,14 +305,29 @@
 /* Define to 1 if you have the <openssl/conf.h> header file. */
 /* #undef HAVE_OPENSSL_CONF_H */
 
+/* Define to 1 if you have the <openssl/dh.h> header file. */
+/* #undef HAVE_OPENSSL_DH_H */
+
+/* Define to 1 if you have the <openssl/dsa.h> header file. */
+/* #undef HAVE_OPENSSL_DSA_H */
+
 /* Define to 1 if you have the <openssl/engine.h> header file. */
 /* #undef HAVE_OPENSSL_ENGINE_H */
 
 /* Define to 1 if you have the <openssl/err.h> header file. */
 /* #undef HAVE_OPENSSL_ERR_H */
 
+/* Define to 1 if you have the `OPENSSL_init_crypto' function. */
+/* #undef HAVE_OPENSSL_INIT_CRYPTO */
+
+/* Define to 1 if you have the `OPENSSL_init_ssl' function. */
+/* #undef HAVE_OPENSSL_INIT_SSL */
+
 /* Define to 1 if you have the <openssl/rand.h> header file. */
 /* #undef HAVE_OPENSSL_RAND_H */
+
+/* Define to 1 if you have the <openssl/rsa.h> header file. */
+/* #undef HAVE_OPENSSL_RSA_H */
 
 /* Define to 1 if you have the <openssl/ssl.h> header file. */
 /* #undef HAVE_OPENSSL_SSL_H */
@@ -297,14 +353,14 @@
 /* Define to 1 if you have the `random' function. */
 /* #undef HAVE_RANDOM */
 
+/* Define to 1 if you have the `RAND_cleanup' function. */
+/* #undef HAVE_RAND_CLEANUP */
+
 /* Define to 1 if you have the `reallocarray' function. */
 /* #undef HAVE_REALLOCARRAY */
 
 /* Define to 1 if you have the `recvmsg' function. */
 /* #undef HAVE_RECVMSG */
-
-/* define if you have the sbrk() call */
-/* #undef HAVE_SBRK */
 
 /* Define to 1 if you have the `sendmsg' function. */
 /* #undef HAVE_SENDMSG */
@@ -333,6 +389,9 @@
 /* Define to 1 if you have the `SHA512_Update' function. */
 /* #undef HAVE_SHA512_UPDATE */
 
+/* Define to 1 if you have the `shmget' function. */
+/* #undef HAVE_SHMGET */
+
 /* Define to 1 if you have the `sigprocmask' function. */
 /* #undef HAVE_SIGPROCMASK */
 
@@ -353,6 +412,9 @@
 
 /* Define if you have the SSL libraries installed. */
 /* #undef HAVE_SSL */
+
+/* Define to 1 if you have the `SSL_CTX_set_security_level' function. */
+/* #undef HAVE_SSL_CTX_SET_SECURITY_LEVEL */
 
 /* Define to 1 if you have the <stdarg.h> header file. */
 #define HAVE_STDARG_H 1
@@ -399,6 +461,12 @@
 /* Define to 1 if you have the <syslog.h> header file. */
 #define HAVE_SYSLOG_H 1
 
+/* Define to 1 if systemd should be used */
+/* #undef HAVE_SYSTEMD */
+
+/* Define to 1 if you have the <sys/ipc.h> header file. */
+/* #undef HAVE_SYS_IPC_H */
+
 /* Define to 1 if you have the <sys/param.h> header file. */
 /* #undef HAVE_SYS_PARAM_H */
 
@@ -407,6 +475,9 @@
 
 /* Define to 1 if you have the <sys/sha2.h> header file. */
 /* #undef HAVE_SYS_SHA2_H */
+
+/* Define to 1 if you have the <sys/shm.h> header file. */
+/* #undef HAVE_SYS_SHM_H */
 
 /* Define to 1 if you have the <sys/socket.h> header file. */
 #define HAVE_SYS_SOCKET_H 1
@@ -593,6 +664,9 @@
 /* Define to 1 to use cachedb support */
 /* #undef USE_CACHEDB */
 
+/* Define to 1 to enable dnscrypt support */
+/* #undef USE_DNSCRYPT */
+
 /* Define to 1 to enable dnstap support */
 /* #undef USE_DNSTAP */
 
@@ -610,6 +684,9 @@
 
 /* Define if you want to use internal select based events */
 #define USE_MINI_EVENT 1
+
+/* Define this to enable SHA1 support. */
+#define USE_SHA1 1
 
 /* Define this to enable SHA256 and SHA512 support. */
 #define USE_SHA2 1
@@ -635,6 +712,9 @@
 # define __EXTENSIONS__ 1
 #endif
 
+
+/* Define this to enable server TCP Fast Open. */
+/* #undef USE_TCP_FASTOPEN */
 
 /* Whether the windows socket API is used */
 /* #undef USE_WINSOCK */
@@ -1003,6 +1083,14 @@ char *strsep(char **stringp, const char *delim);
 #ifndef HAVE_ISBLANK
 #define isblank unbound_isblank
 int isblank(int c);
+#endif
+
+#if defined(HAVE_INET_NTOP) && !HAVE_DECL_INET_NTOP
+const char *inet_ntop(int af, const void *src, char *dst, size_t size);
+#endif
+
+#if defined(HAVE_INET_PTON) && !HAVE_DECL_INET_PTON
+int inet_pton(int af, const char* src, void* dst);
 #endif
 
 #if !defined(HAVE_STRPTIME) || !defined(STRPTIME_WORKS)
